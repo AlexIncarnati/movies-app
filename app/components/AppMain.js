@@ -32,7 +32,7 @@ class MoviesMain extends Component {
 		const target = event.target;
 		const value = target.name;
 		// Convert into number to be able to compare it by type
-		const id = parseInt(target.id, 10);
+		const id = parseFloat(target.id);
 		let movieGenres = this.state.moviesGenres;
 
 		movieGenres.forEach((item) => {
@@ -48,7 +48,7 @@ class MoviesMain extends Component {
 
 	handleChangeRatings(event) {
 		const target = event.target;
-		const value = parseInt(target.value, 10);
+		const value = parseFloat(target.value);
 		// Reload all movies data
 		const storedMoviesData = this.state.allMoviesData;
 		let moviesData = JSON.parse(JSON.stringify(storedMoviesData));

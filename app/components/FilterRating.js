@@ -1,20 +1,14 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import FilterRatingItem from './FilterRatingItem';
 
 const FilterRating = (props) => {
+	const ratingArray = [ 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10 ];
 	return (
 		<div className="filter-rating">
-			<select onChange={props.handleChangeRatings}>
-				<option defaultValue="1">1</option>
-				<option defaultValue="2">2</option>
-				<option defaultValue="3">3</option>
-				<option defaultValue="4">4</option>
-				<option defaultValue="5">5</option>
-				<option defaultValue="6">6</option>
-				<option defaultValue="7">7</option>
-				<option defaultValue="8">8</option>
-				<option defaultValue="9">9</option>
-				<option defaultValue="10">10</option>
+			<h3 className="filter-rating__title">Filter by rating</h3>
+			<select defaultValue="3" onChange={props.handleChangeRatings}>
+				{ratingArray.map((item, index) => <FilterRatingItem value={item} key={index} />)}
 			</select>
 		</div>
 	);
