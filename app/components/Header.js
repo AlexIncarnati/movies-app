@@ -4,7 +4,7 @@ const Header = () => {
 	return (
 		<header>
 			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.34 222.81" fill="#fff">
-				<title>PrimaryLogo_Blue</title>
+				<title>The Movie Db Logo</title>
 				<path
 					d="M2944.56,2236.34c14.6,0,24.48-9.88,24.48-24.48V2052.58c0-14.6-9.88-24.48-24.48-24.48H2742.19c-14.6,0-24.48,9.88-24.48,24.48v198.33l12.56-14.56h0V2052.58a11.94,11.94,0,0,1,11.92-11.92h202.37a11.94,11.94,0,0,1,11.92,11.92v159.28a11.94,11.94,0,0,1-11.92,11.92H2760.82l-12.56,12.56-0.08-.1"
 					transform="translate(-2717.71 -2028.09)"

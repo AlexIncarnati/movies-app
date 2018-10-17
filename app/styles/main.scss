@@ -2,13 +2,13 @@
 @import "pretty-checkboxes.min.css";
 @import "header.scss";
 @import "filter-genres.scss";
+@import "movies.scss";
 @import "loader.scss";
 @import url('//fonts.googleapis.com/css?family=Prompt');
 
 html {
 	box-sizing: border-box;
 	height: 100%;
-	-webkit-overflow-scrolling: touch;
 	font-size: 62.5%;
 }
 
@@ -26,11 +26,6 @@ body {
 }
 
 .main {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	justify-content: center;
-	align-items: center;
 	height: 100%;
 	min-height: 100vh;
 	padding: 1rem;
@@ -41,7 +36,6 @@ body {
 		#243b55,
 		#141e30
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 	font-family: 'Prompt', sans-serif;
 	color: #fff;
 }

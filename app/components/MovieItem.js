@@ -12,16 +12,21 @@ const MovieItem = (props) => {
 	if (visible) {
 		return (
 			<div className="movie-item">
-				<p>Title {title}</p>
-				<p>Genre {genres}</p>
-				<p>Rating {vote_average}</p>
-				<p>Popularity {popularity}</p>
-				<p>Image {poster_path}</p>
 				<img src={`${posterPath}`} alt={title} />
+				<div className="movie-item__wrapper">
+					<h5 className="movie-item__title">{title}</h5>
+					<p className="movie-item__genre">
+						<span>Genre</span> {genres}
+					</p>
+					<p className="movie-item__rating">
+						<span>Rating</span> {vote_average}
+					</p>
+					<p className="movie-item__popularity">
+						<span>Popularity</span> {popularity}
+					</p>
+				</div>
 			</div>
 		);
-	} else {
-		return null;
 	}
 };
 

@@ -127,12 +127,28 @@ class MoviesMain extends Component {
 	render() {
 		const loading = this.state.loading;
 		const error = this.state.error;
+		const movies = this.state.moviesData;
 
 		if (loading) {
 			return <Loading />;
 		}
 		if (error) {
-			return <div>There has been some issue fetching the API data</div>;
+			return (
+				<div className="main">
+					<Header />
+					<h3 className="no-results">There has been some issue fetching the API data</h3>
+				</div>
+			);
+		}
+		if (!movies.length) {
+			return (
+				<div className="main">
+					<Header />
+					<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
+					<FilterRating handleChangeRatings={this.handleChangeRatings} />
+					<h3 className="no-results">No movies found matching your criteria.</h3>
+				</div>
+			);
 		}
 		return (
 			<div className="main">

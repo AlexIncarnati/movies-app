@@ -1,0 +1,44 @@
+.movie-list {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: flex-start;
+	padding: 1rem 0;
+}
+
+.movie-item {
+	flex-basis: 300px;
+	margin-bottom: 3rem;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	span {
+		font-weight: bold;
+		color: #d9534f;
+	}
+}
+
+.movie-item__title {
+	font-size: 2rem;
+	text-align: center;
+	margin: 1rem 0 3rem;
+}
+
+.movie-item__genre,
+.movie-item__rating,
+.movie-item__popularity {
+	height: 40px;
+}
+
+.movie-item__wrapper {
+	min-height: 250px;
+}
+
+.no-results {
+	margin: 3rem 0;
+	text-align: center;
+}

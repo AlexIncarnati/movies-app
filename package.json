@@ -3,10 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"babel": {
-		"presets": [
-			"@babel/preset-env",
-			"@babel/preset-react"
-		]
+		"presets": [ "@babel/preset-env", "@babel/preset-react" ]
 	},
 	"scripts": {
 		"start": "webpack-dev-server --open --port 3000 --hot --host 0.0.0.0",
@@ -15,20 +12,14 @@
 	},
 	"jest": {
 		"setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
-		"snapshotSerializers": [
-			"enzyme-to-json/serializer"
-		],
+		"snapshotSerializers": [ "enzyme-to-json/serializer" ],
 		"moduleNameMapper": {
 			".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
 		},
 		"automock": false,
-		"setupFiles": [
-			"./setupJest.js"
-		]
+		"setupFiles": [ "./setupJest.js" ]
 	},
-	"keywords": [
-		"React Movie DB Search App"
-	],
+	"keywords": [ "React Movie DB Search App" ],
 	"author": "Alessandro Incarnati",
 	"license": "MIT",
 	"description": "",
