@@ -9,20 +9,23 @@ class FilterList extends Component {
 	}
 	render() {
 		return (
-			<div className="filter">
-				{this.props.genres ? (
-					this.props.genres.map((genre, index) => (
-						<FilterItem
-							key={index}
-							genre={genre}
-							handleChangeFilter={this.props.handleChangeFilter}
-							visible={genre.visible}
-							checked={this.state.checked}
-						/>
-					))
-				) : (
-					''
-				)}
+			<div className="filter-genres-wrap">
+				<h3 className="filter-genres__title">Filter by genres</h3>
+				<div className="filter-genres">
+					{this.props.genres ? (
+						this.props.genres.map((genre, index) => (
+							<FilterItem
+								key={index}
+								genre={genre}
+								handleChangeFilter={this.props.handleChangeFilter}
+								visible={genre.visible}
+								checked={this.state.checked}
+							/>
+						))
+					) : (
+						''
+					)}
+				</div>
 			</div>
 		);
 	}

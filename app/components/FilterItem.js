@@ -7,16 +7,21 @@ const FilterItem = (props) => {
 	const checked = props.genre.visible;
 
 	return (
-		<div>
+		<div className="filter-genres__item pretty p-default p-curve p-thick p-smooth">
 			<input
 				type="checkbox"
+				className="filter-genres__checkbox"
 				defaultValue={genre}
 				name={genre}
 				id={genreId}
 				defaultChecked={checked}
 				onClick={props.handleChangeFilter}
 			/>
-			<label htmlFor={genre}> {genre}</label>
+			<div className="state p-danger-o">
+				<label htmlFor={genre} className="filter-genres__checkbox-label">
+					{genre}
+				</label>
+			</div>
 		</div>
 	);
 };
