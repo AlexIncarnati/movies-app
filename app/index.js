@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppMain from './components/AppMain';
-import './index.css';
+import './styles/main.scss';
 
 class App extends React.Component {
 	render() {
-		return (
-			<div>
-				<AppMain />
-			</div>
-		);
+		return <AppMain />;
 	}
 }
 

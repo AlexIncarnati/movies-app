@@ -3,7 +3,6 @@ import React from 'react';
 const Header = () => {
 	return (
 		<header>
-			<h1>Latest movies</h1>
 			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.34 222.81" fill="#fff">
 				<title>PrimaryLogo_Blue</title>
 				<path
@@ -30,6 +29,7 @@ const Header = () => {
 				/>
 				<polygon points="144.01 105.38 134.87 86.65 126.86 86.65 143.23 122.08 144.79 122.08 161.15 86.65 153.14 86.65 144.01 105.38" />
 			</svg>
+			<h1 className="header-title">Top 20 movies out now</h1>
 		</header>
 	);
 };
