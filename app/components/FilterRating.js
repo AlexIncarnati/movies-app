@@ -7,9 +7,11 @@ const FilterRating = (props) => {
 	return (
 		<div className="filter-rating">
 			<h3 className="filter-rating__title">Filter by rating</h3>
-			<select defaultValue="3" onChange={props.handleChangeRatings}>
-				{ratingArray.map((item, index) => <FilterRatingItem value={item} key={index} />)}
-			</select>
+			<div className="filter-rating__select">
+				<select defaultValue="3" onChange={props.handleChangeRatings}>
+					{ratingArray.map((item, index) => <FilterRatingItem value={item} key={index} />)}
+				</select>
+			</div>
 		</div>
 	);
 };
