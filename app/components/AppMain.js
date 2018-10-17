@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Loading from './Loading';
 import { config } from '../config/config';
+import Header from '../components/Header';
 import MovieList from './MovieList';
 import FilterList from './FilterList';
 import FilterRating from './FilterRating';
@@ -135,6 +136,7 @@ class MoviesMain extends Component {
 		}
 		return (
 			<div className="main">
+				<Header />
 				<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
 				<FilterRating handleChangeRatings={this.handleChangeRatings} />
 				<MovieList movies={this.state.moviesData} genres={this.state.moviesGenres} />
