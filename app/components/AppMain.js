@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Loading from './Loading';
-import { config } from '../modules/config';
+import { config } from '../config/config';
 import MovieList from './MovieList';
 import FilterList from './FilterList';
 import FilterRating from './FilterRating';
@@ -17,12 +17,8 @@ class MoviesMain extends Component {
 		super(props);
 
 		this.state = {
-			movieID: '',
-			movieInfo: '',
 			moviesData: [],
 			moviesGenres: [],
-			errorsMoviesData: [],
-			errorsMoviesGenres: [],
 			allMoviesData: [],
 			loading: true
 		};
@@ -36,7 +32,6 @@ class MoviesMain extends Component {
 		const value = target.name;
 		// Convert into number to be able to compare it by type
 		const id = parseInt(target.id, 10);
-
 		let movieGenres = this.state.moviesGenres;
 
 		movieGenres.forEach((item) => {
@@ -53,8 +48,6 @@ class MoviesMain extends Component {
 	handleChangeRatings(event) {
 		const target = event.target;
 		const value = parseInt(target.value, 10);
-		console.log(value);
-
 		// Reload all movies data
 		const storedMoviesData = this.state.allMoviesData;
 		let moviesData = JSON.parse(JSON.stringify(storedMoviesData));
@@ -85,12 +78,11 @@ class MoviesMain extends Component {
 					allMoviesData: data.data.results
 				})
 			)
-			.catch((error) =>
+			.catch((error) => {
 				// handle error
-				this.setState({
-					errors: error
-				})
-			);
+				console.log(error);
+				this.setState({ error: error });
+			});
 	}
 
 	// Get all movies data from API using fetch and save into state
@@ -98,6 +90,7 @@ class MoviesMain extends Component {
 		let dataGenres;
 		axios
 			.get(urlGenres)
+			// handle success
 			.then((data) => {
 				dataGenres = data.data.genres;
 				dataGenres = this.setGenreVisibility(dataGenres);
@@ -105,12 +98,10 @@ class MoviesMain extends Component {
 					moviesGenres: dataGenres
 				});
 			})
-			.catch((error) =>
-				// handle error
-				this.setState({
-					errorsGenres: error
-				})
-			);
+			.catch((error) => {
+				console.log(error);
+				this.setState({ error: error });
+			});
 	}
 
 	componentWillMount() {
@@ -134,11 +125,14 @@ class MoviesMain extends Component {
 
 	render() {
 		const loading = this.state.loading;
+		const error = this.state.error;
 
 		if (loading) {
 			return <Loading />;
 		}
-
+		if (error) {
+			return <div>There has been some issue fetching the API data</div>;
+		}
 		return (
 			<div className="main">
 				<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
