@@ -27,6 +27,8 @@ const MovieItem = (props) => {
 				</div>
 			</div>
 		);
+	} else {
+		return null;
 	}
 };
 

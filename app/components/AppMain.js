@@ -33,16 +33,16 @@ class MoviesMain extends Component {
 		const value = target.name;
 		// Convert into number to be able to compare it by type
 		const id = parseFloat(target.id);
-		let movieGenres = this.state.moviesGenres;
+		let moviesGenres = this.state.moviesGenres;
 
-		movieGenres.forEach((item) => {
+		moviesGenres.forEach((item) => {
 			if (item.id === id) {
 				item.visible = !item.visible;
 			}
 		});
 
 		this.setState({
-			movieGenres: movieGenres
+			moviesGenres: moviesGenres
 		});
 	}
 
@@ -63,7 +63,7 @@ class MoviesMain extends Component {
 	setGenreVisibility(data) {
 		data.forEach((item) => (item.visible = true));
 		this.setState({
-			movieGenres: data
+			moviesGenres: data
 		});
 		return data;
 	}
