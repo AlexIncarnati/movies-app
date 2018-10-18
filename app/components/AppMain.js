@@ -149,7 +149,6 @@ class MoviesMain extends Component {
 					<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
 					<FilterRating handleChangeRatings={this.handleChangeRatings} />
 					<h3 className="no-results">No movies found matching your criteria.</h3>
-					<Footer />
 				</div>
 			);
 		}

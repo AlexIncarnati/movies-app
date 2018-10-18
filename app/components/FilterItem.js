@@ -29,7 +29,8 @@ const FilterItem = (props) => {
 FilterItem.propTypes = {
 	genre: Proptypes.object,
 	genreId: Proptypes.string,
-	checked: Proptypes.bool
+	checked: Proptypes.bool,
+	handleChangeFilter: Proptypes.func
 };
 
 export default FilterItem;

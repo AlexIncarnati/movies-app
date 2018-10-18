@@ -9,9 +9,9 @@ class FilterList extends Component {
 	}
 	render() {
 		return (
-			<div className="filter-genres-wrap">
+			<div className="filter-genres">
 				<h3 className="filter-genres__title">Filter by genres</h3>
-				<div className="filter-genres">
+				<div className="filter-genres__menu">
 					{this.props.genres ? (
 						this.props.genres.map((genre, index) => (
 							<FilterItem
