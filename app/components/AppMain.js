@@ -12,7 +12,7 @@ import Footer from './Footer';
 let loaderTimeout;
 const landingMovieId = config.LANDING_MOVIE_ID;
 const url = `${config.BASE_URL}/movie/now_playing?&api_key=${config.KEY}&language=en-US&page=1`;
-let urlGenres = `${config.BASE_URL}/genre/movie/list?&api_key=${config.KEY}&language=en-US`;
+const urlGenres = `${config.BASE_URL}/genre/movie/list?&api_key=${config.KEY}&language=en-US`;
 
 class Movies extends Component {
 	constructor(props) {
@@ -31,7 +31,6 @@ class Movies extends Component {
 
 	handleChangeFilter(event) {
 		const target = event.target;
-		const value = target.name;
 		// Convert into number to be able to compare it by type
 		const id = parseFloat(target.id);
 		// Reload all movies data
@@ -151,7 +150,7 @@ class Movies extends Component {
 					<Header />
 					<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
 					<FilterRating handleChangeRatings={this.handleChangeRatings} />
-					<h3 className="no-results">No movies found matching your criteria.</h3>
+					<h3 className="no-results">No movie found matching your criteria.</h3>
 				</div>
 			);
 		}
