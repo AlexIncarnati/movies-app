@@ -1,18 +1,19 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import displayplaceholderImage from '../images/placeholder.png';
 
 const MovieItem = (props) => {
 	const { vote_average, title, genre_ids, poster_path, popularity } = props.movie;
 	const genresArray = props.genres;
 	const genres = genresArray.join(', ');
 	const movieDbImagePath = 'https://image.tmdb.org/t/p/w500/';
-	let posterPath = poster_path ? `${movieDbImagePath}${poster_path}` : `${displayplaceholderImage}`;
+	let posterPath = poster_path ? `${movieDbImagePath}${poster_path}` : displayplaceholderImage;
 	const visible = props.genresVisibles.every((item) => item === true);
 
 	if (visible) {
 		return (
 			<div className="movie-item">
-				<img src={`${posterPath}`} alt={title} />
+				<img src={posterPath} alt={title} />
 				<div className="movie-item__wrapper">
 					<h5 className="movie-item__title">{title}</h5>
 					<p className="movie-item__genre">
