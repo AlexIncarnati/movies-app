@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import MovieList from './MovieList';
 import FilterList from './FilterList';
 import FilterRating from './FilterRating';
+import Footer from './Footer';
 
 // Define variables
 let loaderTimeout;
@@ -137,6 +138,7 @@ class MoviesMain extends Component {
 				<div className="main">
 					<Header />
 					<h3 className="no-results">There has been some issue fetching the API data</h3>
+					<Footer />
 				</div>
 			);
 		}
@@ -147,6 +149,7 @@ class MoviesMain extends Component {
 					<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
 					<FilterRating handleChangeRatings={this.handleChangeRatings} />
 					<h3 className="no-results">No movies found matching your criteria.</h3>
+					<Footer />
 				</div>
 			);
 		}
@@ -156,6 +159,7 @@ class MoviesMain extends Component {
 				<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
 				<FilterRating handleChangeRatings={this.handleChangeRatings} />
 				<MovieList movies={this.state.moviesData} genres={this.state.moviesGenres} />
+				<Footer />
 			</div>
 		);
 	}

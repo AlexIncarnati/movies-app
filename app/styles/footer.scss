@@ -1,0 +1,13 @@
+.footer-title {
+	text-align: center;
+	letter-spacing: 1.5px;
+	font-size: 1.5rem;
+	margin: 0 0 1rem;
+	> a {
+		color: #fff;
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
