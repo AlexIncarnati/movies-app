@@ -11,7 +11,7 @@ import Footer from './Footer';
 // Define variables
 let loaderTimeout;
 const landingMovieId = config.LANDING_MOVIE_ID;
-let url = `${config.BASE_URL}/2movie/now_playing?&api_key=${config.KEY}&language=en-US&page=1`;
+let url = `${config.BASE_URL}/movie/now_playing?&api_key=${config.KEY}&language=en-US&page=1`;
 let urlGenres = `${config.BASE_URL}/genre/movie/list?&api_key=${config.KEY}&language=en-US`;
 
 class MoviesMain extends Component {
@@ -120,7 +120,7 @@ class MoviesMain extends Component {
 	componentDidMount() {
 		loaderTimeout = setTimeout(() => {
 			this.setLoadingState();
-		}, 4000);
+		}, 6000);
 	}
 
 	render() {
