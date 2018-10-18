@@ -9,6 +9,8 @@
 .filter-rating__title {
 	margin: 0;
 	padding: 1rem;
+	font-size: 1.5rem;
+	line-height: 3rem;
 }
 
 .filter-rating__select {
@@ -17,5 +19,11 @@
 	align-items: center;
 	& > select {
 		margin: auto 1rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.filter-rating__title {
+		font-size: 1.75rem;
 	}
 }
