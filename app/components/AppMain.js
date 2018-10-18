@@ -54,7 +54,7 @@ class MoviesMain extends Component {
 		const storedMoviesData = this.state.allMoviesData;
 		let moviesData = JSON.parse(JSON.stringify(storedMoviesData));
 		// Filter by vote average
-		moviesData = moviesData.filter((item) => item.vote_average > value);
+		moviesData = moviesData.filter((item) => item.vote_average >= value);
 
 		this.setState({
 			moviesData: moviesData
@@ -82,7 +82,6 @@ class MoviesMain extends Component {
 			)
 			.catch((error) => {
 				// handle error
-				console.log(error);
 				this.setState({ error: error });
 			});
 	}
@@ -101,7 +100,6 @@ class MoviesMain extends Component {
 				});
 			})
 			.catch((error) => {
-				console.log(error);
 				this.setState({ error: error });
 			});
 	}
@@ -122,7 +120,7 @@ class MoviesMain extends Component {
 	componentDidMount() {
 		loaderTimeout = setTimeout(() => {
 			this.setLoadingState();
-		}, 800);
+		}, 4000);
 	}
 
 	render() {
@@ -138,6 +136,7 @@ class MoviesMain extends Component {
 				<div className="main">
 					<Header />
 					<h3 className="no-results">There has been some issue fetching the API data</h3>
+					<p>{this.state.error}</p>
 					<Footer />
 				</div>
 			);
