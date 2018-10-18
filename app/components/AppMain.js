@@ -11,17 +11,17 @@ import Footer from './Footer';
 // Define variables
 let loaderTimeout;
 const landingMovieId = config.LANDING_MOVIE_ID;
-let url = `${config.BASE_URL}/movie/now_playing?&api_key=${config.KEY}&language=en-US&page=1`;
+const url = `${config.BASE_URL}/movie/now_playing?&api_key=${config.KEY}&language=en-US&page=1`;
 let urlGenres = `${config.BASE_URL}/genre/movie/list?&api_key=${config.KEY}&language=en-US`;
 
-class MoviesMain extends Component {
+class Movies extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			moviesData: [],
 			moviesGenres: [],
-			allMoviesData: [],
+			storedMoviesData: [],
 			loading: true
 		};
 
@@ -34,6 +34,7 @@ class MoviesMain extends Component {
 		const value = target.name;
 		// Convert into number to be able to compare it by type
 		const id = parseFloat(target.id);
+		// Reload all movies data
 		let moviesGenres = this.state.moviesGenres;
 
 		moviesGenres.forEach((item) => {
@@ -51,7 +52,7 @@ class MoviesMain extends Component {
 		const target = event.target;
 		const value = parseFloat(target.value);
 		// Reload all movies data
-		const storedMoviesData = this.state.allMoviesData;
+		const storedMoviesData = this.state.storedMoviesData;
 		let moviesData = JSON.parse(JSON.stringify(storedMoviesData));
 		// Filter by vote average
 		moviesData = moviesData.filter((item) => item.vote_average >= value);
@@ -61,6 +62,7 @@ class MoviesMain extends Component {
 		});
 	}
 
+	// Adds a property visible to each item of the genres data
 	setGenreVisibility(data) {
 		data.forEach((item) => (item.visible = true));
 		this.setState({
@@ -77,7 +79,7 @@ class MoviesMain extends Component {
 				// handle success
 				this.setState({
 					moviesData: data.data.results,
-					allMoviesData: data.data.results
+					storedMoviesData: data.data.results
 				})
 			)
 			.catch((error) => {
@@ -108,6 +110,7 @@ class MoviesMain extends Component {
 		// Api Calls
 		this.getMoviesData();
 		this.getMoviesGenres();
+		// Clear Loader timeout
 		clearTimeout(loaderTimeout);
 	}
 
@@ -164,4 +167,4 @@ class MoviesMain extends Component {
 	}
 }
 
-export default MoviesMain;
+export default Movies;

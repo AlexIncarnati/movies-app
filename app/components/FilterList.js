@@ -19,7 +19,7 @@ class FilterList extends Component {
 								genre={genre}
 								handleChangeFilter={this.props.handleChangeFilter}
 								visible={genre.visible}
-								checked={this.state.checked}
+								checked={genre.visible}
 							/>
 						))
 					) : (
