@@ -50,7 +50,7 @@ npm run build
 
 # DEMO
 
-[DEMO](http://www.rightinterfaces.com/the-movie-db-app/) - http://www.rightinterfaces.com/the-movie-db-app/
+[DEMO](http://www.rightinterfaces.com/movie-db-app/) - http://www.rightinterfaces.com/movie-db-app/
 
 
 
