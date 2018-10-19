@@ -27,6 +27,8 @@ class Movies extends Component {
 
 		this.handleChangeFilter = this.handleChangeFilter.bind(this);
 		this.handleChangeRatings = this.handleChangeRatings.bind(this);
+		this.toggleAllGenreFilters = this.toggleAllGenreFilters.bind(this);
+		this.resetAllGenreFilters = this.resetAllGenreFilters.bind(this);
 	}
 
 	handleChangeFilter(event) {
@@ -40,6 +42,30 @@ class Movies extends Component {
 			if (item.id === id) {
 				item.visible = !item.visible;
 			}
+		});
+
+		this.setState({
+			moviesGenres: moviesGenres
+		});
+	}
+
+	toggleAllGenreFilters() {
+		let moviesGenres = this.state.moviesGenres;
+
+		moviesGenres.forEach((item) => {
+			item.visible = !item.visible;
+		});
+
+		this.setState({
+			moviesGenres: moviesGenres
+		});
+	}
+
+	resetAllGenreFilters() {
+		let moviesGenres = this.state.moviesGenres;
+
+		moviesGenres.forEach((item) => {
+			item.visible = true;
 		});
 
 		this.setState({
@@ -148,7 +174,12 @@ class Movies extends Component {
 			return (
 				<div className="main">
 					<Header />
-					<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
+					<FilterList
+						genres={this.state.moviesGenres}
+						handleChangeFilter={this.handleChangeFilter}
+						toggleAllGenreFilters={this.toggleAllGenreFilters}
+						resetAllGenreFilters={this.resetAllGenreFilters}
+					/>
 					<FilterRating handleChangeRatings={this.handleChangeRatings} />
 					<h3 className="no-results">No movie found matching your criteria.</h3>
 				</div>
@@ -157,7 +188,12 @@ class Movies extends Component {
 		return (
 			<div className="main">
 				<Header />
-				<FilterList genres={this.state.moviesGenres} handleChangeFilter={this.handleChangeFilter} />
+				<FilterList
+					genres={this.state.moviesGenres}
+					handleChangeFilter={this.handleChangeFilter}
+					toggleAllGenreFilters={this.toggleAllGenreFilters}
+					resetAllGenreFilters={this.resetAllGenreFilters}
+				/>
 				<FilterRating handleChangeRatings={this.handleChangeRatings} />
 				<MovieList movies={this.state.moviesData} genres={this.state.moviesGenres} />
 				<Footer />

@@ -5,12 +5,17 @@ import Proptypes from 'prop-types';
 class FilterList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { checked: this.props.visible };
 	}
 	render() {
 		return (
 			<div className="filter-genres">
 				<h3 className="filter-genres__title">Filter by genre</h3>
+				<button className="filter-genres__btn--toggle" onClick={this.props.toggleAllGenreFilters}>
+					Toggle All
+				</button>
+				<button className="filter-genres__btn--reset" onClick={this.props.resetAllGenreFilters}>
+					Reset All
+				</button>
 				<div className="filter-genres__menu">
 					{this.props.genres ? (
 						this.props.genres.map((genre, index) => (

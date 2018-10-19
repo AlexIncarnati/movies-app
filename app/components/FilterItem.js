@@ -14,8 +14,8 @@ const FilterItem = (props) => {
 				defaultValue={genre}
 				name={genre}
 				id={genreId}
-				defaultChecked={checked}
-				onClick={props.handleChangeFilter}
+				checked={checked}
+				onChange={props.handleChangeFilter}
 			/>
 			<div className="state p-danger-o">
 				<label htmlFor={genre} className="filter-genres__checkbox-label">
