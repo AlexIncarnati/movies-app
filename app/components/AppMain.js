@@ -4,8 +4,7 @@ import Loading from './Loading';
 import { config } from '../config/config';
 import Header from '../components/Header';
 import MovieList from './MovieList';
-import FilterList from './FilterList';
-import FilterRating from './FilterRating';
+import Filters from './Filters';
 import Footer from './Footer';
 
 // Define variables
@@ -148,7 +147,7 @@ class Movies extends Component {
 	componentDidMount() {
 		loaderTimeout = setTimeout(() => {
 			this.setLoadingState();
-		}, 6000);
+		}, 600);
 	}
 
 	render() {
@@ -174,13 +173,14 @@ class Movies extends Component {
 			return (
 				<div className="main">
 					<Header />
-					<FilterList
+					<Filters
 						genres={this.state.moviesGenres}
 						handleChangeFilter={this.handleChangeFilter}
 						toggleAllGenreFilters={this.toggleAllGenreFilters}
 						resetAllGenreFilters={this.resetAllGenreFilters}
+						handleChangeRatings={this.handleChangeRatings}
 					/>
-					<FilterRating handleChangeRatings={this.handleChangeRatings} />
+
 					<h3 className="no-results">No movie found matching your criteria.</h3>
 				</div>
 			);
@@ -188,13 +188,13 @@ class Movies extends Component {
 		return (
 			<div className="main">
 				<Header />
-				<FilterList
+				<Filters
 					genres={this.state.moviesGenres}
 					handleChangeFilter={this.handleChangeFilter}
 					toggleAllGenreFilters={this.toggleAllGenreFilters}
 					resetAllGenreFilters={this.resetAllGenreFilters}
+					handleChangeRatings={this.handleChangeRatings}
 				/>
-				<FilterRating handleChangeRatings={this.handleChangeRatings} />
 				<MovieList movies={this.state.moviesData} genres={this.state.moviesGenres} />
 				<Footer />
 			</div>
