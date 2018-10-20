@@ -3,48 +3,65 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"babel": {
-		"presets": [ "@babel/preset-env", "@babel/preset-react" ]
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		]
 	},
 	"scripts": {
 		"start": "webpack-dev-server --open --port 3000 --hot --host 0.0.0.0",
 		"test": "jest --watch",
-		"build": "webpack"
+		"build": "webpack",
+		"eslint-check": "eslint --print-config . | eslint-config-prettier-check"
 	},
 	"jest": {
 		"setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
-		"snapshotSerializers": [ "enzyme-to-json/serializer" ],
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		],
 		"moduleNameMapper": {
 			".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
 		}
 	},
-	"keywords": [ "React Movie DB Search App" ],
+	"keywords": [
+		"React Movie DB Search App"
+	],
 	"author": "Alessandro Incarnati",
 	"license": "MIT",
 	"description": "",
 	"dependencies": {
 		"prop-types": "^15.6.2",
 		"react": "^16.5.2",
-		"react-dom": "^16.5.2"
+		"react-dom": "^16.5.2",
+		"axios": "^0.18.0",
+		"enzyme": "^3.7.0",
+		"enzyme-adapter-react-16": "^1.6.0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.0.0",
 		"@babel/core": "^7.1.2",
 		"@babel/preset-env": "^7.1.0",
 		"@babel/preset-react": "^7.0.0",
-		"axios": "^0.18.0",
 		"babel-core": "^7.0.0-bridge.0",
+		"babel-eslint": "^8.2.6",
 		"babel-jest": "^23.6.0",
 		"babel-loader": "^8.0.4",
 		"css-loader": "^1.0.0",
-		"enzyme": "^3.7.0",
-		"enzyme-adapter-react-16": "^1.6.0",
 		"enzyme-to-json": "^3.3.4",
+		"eslint": "^5.7.0",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-config-prettier": "^3.1.0",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-jsx-a11y": "^6.1.2",
+		"eslint-plugin-prettier": "^3.0.0",
+		"eslint-plugin-react": "^7.11.1",
 		"file-loader": "^2.0.0",
 		"html-webpack-plugin": "^3.2.0",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^23.6.0",
 		"jest-dom": "^2.0.5",
 		"node-sass": "^4.9.4",
+		"prettier": "1.14.3",
 		"pretty-checkbox": "^3.0.3",
 		"sass-loader": "^7.1.0",
 		"style-loader": "^0.23.1",
