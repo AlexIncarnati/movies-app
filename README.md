@@ -1,34 +1,13 @@
 # MOVIE DB API APP
 
-This app is a simple app for testing out the MOVIE DB APIs.
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-clone the repo to your local environment on the terminal or just download the zip file.
-
-https://github.com/AlexIncarnati/movies-app.git
-
-### Prerequisites for running the app locally
-
-Node.js and npm installed
-
-### Installing
-
-Step by step on your terminal
-
-```
-mkdir new_directory
-cd new_directory
-npm install
-```
+This is a simple SPA for testing out the MOVIE DB APIs.
 
 ## Running the app on your local environment
 
-After installation please run
+Download the zip or clone the repo then:
 
 ```
+npm install
 npm run start
 ```
 
@@ -42,7 +21,7 @@ npm run test
 
 ## Create a build of the app
 
-You can create a build version of the app by running this command on your terminal, you can find the configuration on webpack.config.js. You will find the built files inside the /dist folder.
+You will find the built files inside the /dist folder.
 
 ```
 npm run build
@@ -53,16 +32,11 @@ npm run build
 [DEMO](http://www.rightinterfaces.com/movie-db-app/) - http://www.rightinterfaces.com/movie-db-app/
 
 
-
 ## Built With
 
 * [ReactJS](https://reactjs.org/) - The JS library used
 * [Jest](https://jestjs.io/) - Javascript Testing Library
 * [Enzyme](https://airbnb.io/enzyme/) - Javascript Test Utility from Airbnb
-
-## Authors
-
-* **Alessandro Incarnati** -
 
 ## License
 
@@ -71,7 +45,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## INTRO
 
 * Decided not to use any boilerplate for React to show the ability of configuring the app from scratch (e.g. starting from npm init, webpack.config.js etc.)
-* Tried to keep it dry and used ES6
 * Designed a quick UI for it and implemented it with a responsive mobile first approach
 
 ## FEATURES
@@ -97,10 +70,6 @@ For example if 'Action' and 'Drama' genres are selected listed movies must have 
 * **Fully responsive**, supports well all devices with media queries, mobile first approach using flexbox
 * Added SASS and divided styles in SASS modules
 * Added ESLINT, PRETTIER, and lots of code linting settings - cleaner code ES6
-
-## COMMENTS
-
-Hope you like it! 🤗
 
 
 

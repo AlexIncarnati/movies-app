@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 import displayplaceholderImage from '../images/placeholder.png';
 
