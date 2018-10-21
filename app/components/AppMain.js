@@ -44,7 +44,7 @@ class Movies extends Component {
   componentDidMount() {
     loaderTimeout = setTimeout(() => {
       this.setLoadingState();
-    }, 600);
+    }, 6000);
   }
 
   // Adds a property visible to each item of the genres data

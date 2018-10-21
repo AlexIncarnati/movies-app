@@ -7,7 +7,6 @@ const MovieDetails = props => {
     movie: { vote_average, vote_count, title, poster_path, overview, release_date },
   } = props;
 
-  console.log(props);
   const { detailsOpened, genres, toggleClass } = props;
   const movieDbImagePath = 'https://image.tmdb.org/t/p/w500/';
   const posterPath = poster_path ? `${movieDbImagePath}${poster_path}` : displayplaceholderImage;
