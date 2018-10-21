@@ -79,11 +79,15 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Full filtering functionality for movies by genres and rating using the MOVIE DB API
 * Display a list of movies, each showing their title, genres and poster image
 * **Sorting by popularity descending** - most popular first
-* Data fetching is done by calling the input API's only once.
 * **Movies are filterable by multiple genres**, the user can toggle movies depending on all of its assigned genres using exclusive sorting.
 For example if 'Action' and 'Drama' genres are selected listed movies must have both 'Action' and 'Drama' genres otherwise it won't show those movies.
 * Added **Toggle All and Reset All functionality** for filters genres
 * Movies are **filterable by rating**, the user can set the value of the minimum rating of movies to display and filter accordingly.
+* **Movie details** overlay added
+
+## IMPLEMENTATION DETAILS
+
+* Data fetching is done by calling the input API's only once.
 * Implemented **Error handling** on both API calls with catch() and in the views too
 * Implemented component **Snapshot Unit Testing** with mock data taken from API responses done with Jest and Enzyme.
 * Added async simulation on load with a Loader Component
@@ -91,6 +95,8 @@ For example if 'Action' and 'Drama' genres are selected listed movies must have 
 * Used original SVG from Movie DB and filled in white color
 * Added placeholder image in case no poster_path is returned by the API and used it as fallback image
 * **Fully responsive**, supports well all devices with media queries, mobile first approach using flexbox
+* Added SASS and divided styles in SASS modules
+* Added ESLINT, PRETTIER, and lots of code linting settings - cleaner code ES6
 
 ## COMMENTS
 
