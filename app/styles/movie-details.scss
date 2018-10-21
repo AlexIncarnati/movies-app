@@ -115,10 +115,12 @@
   }
    .movie-details__image {
     width: 100%;
+    max-width: 500px;
    }
    .movie-details {
     flex-direction: row;
     padding: 4rem;
+    height: 100%;
   }
   .close-overlay{
     right: 3rem;
