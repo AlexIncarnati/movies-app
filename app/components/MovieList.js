@@ -7,18 +7,21 @@ const MovieList = props => {
   let { movies } = props;
   movies = movies.map(movie => {
     const movieItem = movie;
-    const { vote_average, title, genre_ids, poster_path, popularity } = movieItem;
+
+    const { vote_average, vote_count, title, genre_ids, poster_path, popularity, overview, release_date } = movieItem;
     return {
       vote_average,
+      vote_count,
       title,
       genre_ids,
       poster_path,
       popularity,
+      overview,
+      release_date,
     };
   });
 
   movies = movies.sort((a, b) => b.popularity - a.popularity);
-
   const { genres } = props;
 
   // Map array by genre ids only

@@ -9,7 +9,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'eslint-loader' },
+      { test: /\.(js)$/, use: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
       { test: /\.(png|jpg|gif)$/, use: ['file-loader'] },

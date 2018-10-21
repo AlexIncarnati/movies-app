@@ -117,7 +117,7 @@ class Movies extends Component {
 
     moviesGenres.forEach(item => {
       const genre = item;
-      genre.visible = !item.visible;
+      genre.visible = !genre.visible;
     });
 
     this.setState({
