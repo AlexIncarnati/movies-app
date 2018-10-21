@@ -55,7 +55,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * **Movies are filterable by multiple genres**, the user can toggle movies depending on all of its assigned genres using exclusive sorting.
 For example if 'Action' and 'Drama' genres are selected listed movies must have both 'Action' and 'Drama' genres otherwise it won't show those movies.
 * Added **Toggle All and Reset All functionality** for filters genres
-* Movies are **filterable by rating**, the user can set the value of the minimum rating of movies to display and filter accordingly.
+* Movies are **filterable by rating**, the user can set the value of the minimum rating of movies to display and filter accordingly. (Default selected value is 3)
 * **Movie details** overlay added
 
 ## IMPLEMENTATION DETAILS
